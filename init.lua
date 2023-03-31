@@ -16,16 +16,13 @@ return {
       --   ["remote3"] = "github_user", -- GitHub user assume AstroNvim fork
     },
   },
-
   -- Set colorscheme to use
   colorscheme = "astrodark",
-
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
     virtual_text = true,
     underline = true,
   },
-
   lsp = {
     -- customize lsp formatting options
     formatting = {
@@ -43,16 +40,21 @@ return {
         -- "sumneko_lua",
       },
       timeout_ms = 1000, -- default format timeout
-      -- filter = function(client) -- fully override the default formatting function
-      --   return true
-      -- end
+      filter = function(client) -- fully override the default formatting function
+        if vim.bo.filetype == "vue" then return client.name == "null-ls" end
+
+        if vim.bo.filetype == "typescript" then return client.name == "null-ls" end
+
+        if vim.bo.filetype ~= "vue" then return true end
+
+        return false
+      end,
     },
     -- enable servers that you already have installed without mason
     servers = {
       -- "pyright"
     },
   },
-
   -- Configure require("lazy").setup() options
   lazy = {
     defaults = { lazy = true },
@@ -63,11 +65,12 @@ return {
       },
     },
   },
-
   -- This function is run last and is a good place to configuring
   -- augroups/autocommands and custom filetypes also this just pure lua so
   -- anything that doesn't fit in the normal config locations above can go here
   polish = function()
+    require("user.autocmds").setup()
+
     -- Set up custom filetypes
     -- vim.filetype.add {
     --   extension = {

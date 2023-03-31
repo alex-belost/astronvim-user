@@ -1,9 +1,15 @@
 return {
+  -- You can disable default plugins as follows:
+  -- { "max397574/better-escape.nvim", enabled = false },
+  -- { "nvim-neo-tree/neo-tree.nvim", enabled = false },
+
   -- customize alpha options
+  --
   {
     "goolord/alpha-nvim",
     opts = function(_, opts)
-      -- customize the dashboard header
+      local dashboard = require "alpha.themes.dashboard"
+
       opts.section.header.val = {
         " █████  ███████ ████████ ██████   ██████",
         "██   ██ ██         ██    ██   ██ ██    ██",
@@ -17,22 +23,33 @@ return {
         "    ██  ██ ██  ██  ██  ██ ██  ██  ██",
         "    ██   ████   ████   ██ ██      ██",
       }
+
+      -- local button = require("astronvim.utils").alpha_button
+      opts.section.buttons.val = {
+        dashboard.button("l", "  Last Session  ", "<cmd>SessionManager! load_last_session<cr>"),
+        dashboard.button("s", "󱂬  Load Session  ", "<cmd>SessionManager! load_session<cr>"),
+        dashboard.button("f", "  Find File  ", ":lua require('telescope.builtin').find_files()<cr>"),
+        dashboard.button("o", "  Recents  ", ":lua require('telescope.builtin').oldfiles()<cr>"),
+        dashboard.button("w", "  Find Word  ", ":lua require('telescope.builtin').live_grep()<cr>"),
+        dashboard.button("m", "  Bookmarks  ", ":lua require('telescope.builtin').marks()<cr>"),
+      }
+
       return opts
     end,
   },
-  -- You can disable default plugins as follows:
-  -- { "max397574/better-escape.nvim", enabled = false },
-  --
+
   -- You can also easily customize additional setup of plugins that is outside of the plugin's setup call
-  -- {
-  --   "L3MON4D3/LuaSnip",
-  --   config = function(plugin, opts)
-  --     require "plugins.configs.luasnip"(plugin, opts) -- include the default astronvim config that calls the setup call
-  --     -- add more custom luasnip configuration such as filetype extend or custom snippets
-  --     local luasnip = require "luasnip"
-  --     luasnip.filetype_extend("javascript", { "javascriptreact" })
-  --   end,
-  -- },
+  {
+    "L3MON4D3/LuaSnip",
+    config = function(plugin, opts)
+      require "plugins.configs.luasnip" (plugin, opts)                                       -- include the default astronvim config that calls the setup call
+
+      require("luasnip.loaders.from_vscode").lazy_load { paths = { "./lua/user/snippets" } } -- load snippets paths
+
+      -- local luasnip = require "luasnip"
+      -- luasnip.filetype_extend("javascript", { "javascriptreact" })
+    end,
+  },
   -- {
   --   "windwp/nvim-autopairs",
   --   config = function(plugin, opts)
@@ -50,7 +67,7 @@ return {
   --           :with_pair(
   --             cond.not_before_regex("xxx", 3)
   --           )
-  --           -- don't move right when repeat character
+  --           --fon't move right when repeat character
   --           :with_move(cond.none())
   --           -- don't delete if the next character is xx
   --           :with_del(cond.not_after_regex "xx")
