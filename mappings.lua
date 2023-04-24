@@ -39,7 +39,7 @@ return {
       end,
       desc = "Close buffer",
     },
-    ["<leader>m"] = { name = "Bookmarks" },
+    ["<leader>m"] = { name = " Bookmarks" },
     ["<leader>ma"] = {
       function() require("harpoon.mark").add_file() end,
       desc = "Add file",
@@ -71,6 +71,19 @@ return {
     ["<leader>ml"] = {
       function() require("harpoon.ui").nav_prev() end,
       desc = "Go to prev",
+    },
+    ["<leader>fb"] = {
+      "<cmd>Neotree reveal_force_cwd<cr>",
+      desc = "Find in tree",
+    },
+    ["<leader>T"] = { name = " TODO's" },
+    ["<leader>Tf"] = {
+      "<cmd>TodoTelescope<cr>",
+      desc = "Find TODO's",
+    },
+    ["<leader>Tt"] = {
+      "<cmd>TodoTrouble<cr>",
+      desc = "Trouble Trouble",
     },
   },
   t = {

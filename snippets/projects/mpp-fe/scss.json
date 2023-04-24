@@ -2,11 +2,11 @@
   "Module imports": {
     "prefix": "mpp-base",
     "body": [
-      "@use \"common/core/stylesheets/abstracts/palette\";",
-      "@use \"common/core/stylesheets/abstracts/variables\";",
-      "@use \"common/core/stylesheets/abstracts/typography\";",
-      "@use \"common/core/stylesheets/abstracts/helpers\";",
-      "@use \"common/core/stylesheets/abstracts/functions/convert\";"
+      "@use 'common/core/stylesheets/abstracts/palette';",
+      "@use 'common/core/stylesheets/abstracts/variables';",
+      "@use 'common/core/stylesheets/abstracts/typography';",
+      "@use 'common/core/stylesheets/abstracts/helpers';",
+      "@use 'common/core/stylesheets/abstracts/functions/convert';"
     ],
     "description": "Base style imports for mpp-fe app"
   }

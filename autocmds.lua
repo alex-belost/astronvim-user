@@ -11,19 +11,19 @@ local function tab_win_closed(winnr)
 
   if buf_info.name:match ".*NvimTree_%d*$" then -- close buffer was nvim tree
     -- Close all nvim tree on :q
-    if not vim.tbl_isempty(tab_bufs) then -- and was not the last window (not closed automatically by code below)
+    if not vim.tbl_isempty(tab_bufs) then       -- and was not the last window (not closed automatically by code below)
       api.tree.close()
     end
-  else -- else closed buffer was normal buffer
+  else                     -- else closed buffer was normal buffer
     if #tab_bufs == 1 then -- if there is only 1 buffer left in the tab
       local last_buf_info = vim.fn.getbufinfo(tab_bufs[1])[1]
 
       if last_buf_info.name:match ".*NvimTree_%d*$" then -- and that buffer is nvim tree
         local function scheduleTree()
-          if #vim.api.nvim_list_wins() == 1 then -- if its the last buffer in vim
+          if #vim.api.nvim_list_wins() == 1 then         -- if its the last buffer in vim
             vim.cmd { cmd = "quit" }
-          else -- else there are more tabs open
-            vim.api.nvim_win_close(tab_wins[1], true) -- then close only the tab
+          else                                           -- else there are more tabs open
+            vim.api.nvim_win_close(tab_wins[1], true)    -- then close only the tab
           end
         end
 
@@ -34,6 +34,15 @@ local function tab_win_closed(winnr)
 end
 
 function M.setup()
+  vim.api.nvim_create_autocmd("FileType", {
+    pattern = { "gitcommit", "markdown", "text", "plaintex" },
+    group = vim.api.nvim_create_augroup("auto_spell", { clear = true }),
+    callback = function()
+      vim.opt_local.wrap = true
+      vim.opt_local.spell = true
+    end,
+  })
+
   -- vim.api.nvim_create_autocmd("WinClosed", {
   --   callback = function()
   --     local winnr = tonumber(vim.fn.expand "<amatch>")
