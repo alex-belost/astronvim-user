@@ -1,9 +1,4 @@
--- Mapping data with "desc" stored directly by vim.keymap.set().
--- Please use this mappings table to set keyboard mapping since this is the
--- lower level configuration and more robust one. (which-key will
--- automatically pick-up stored data by this setting.)
 return {
-  -- first key is the mode
   n = {
     ["<leader>bn"] = { "<cmd>tabnew<cr>", desc = "New tab" },
     ["<leader>bD"] = {
@@ -14,10 +9,6 @@ return {
       end,
       desc = "Pick to close",
     },
-    ["<A-k>"] = { function() require("smart-splits").resize_up() end, desc = "Resize split up" },
-    ["<A-j>"] = { function() require("smart-splits").resize_down() end, desc = "Resize split down" },
-    ["<A-h>"] = { function() require("smart-splits").resize_left() end, desc = "Resize split left" },
-    ["<A-l>"] = { function() require("smart-splits").resize_right() end, desc = "Resize split right" },
     ["<Tab>"] = {
       function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
       desc = "Next buffer",
@@ -26,8 +17,6 @@ return {
       function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
       desc = "Previous buffer",
     },
-    -- ["<leader>e"] = { "<cmd>NvimTreeToggle<cr>", desc = "Toggle explorer" },
-    -- ["<leader>o"] = { "<cmd>NvimTreeFocus<cr>", desc = "Focus explorer" },
     ["<leader><space>"] = { function() require("telescope.builtin").buffers() end, desc = "Search buffers" },
     ["<leader>c"] = {
       function()

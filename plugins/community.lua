@@ -17,47 +17,30 @@ return {
   { import = "astrocommunity.syntax.hlargs-nvim" },
   { import = "astrocommunity.editing-support.todo-comments-nvim" },
   { import = "astrocommunity.editing-support.mini-splitjoin" },
-  -- { import = "astrocommunity.editing-support.dial-nvim" },
+  { import = "astrocommunity.editing-support.dial-nvim" },
   { import = "astrocommunity.editing-support.refactoring-nvim" },
-  { import = "astrocommunity.colorscheme.nightfox", enabled = false },
+  { import = "astrocommunity.colorscheme.nightfox", enabled = true },
   { import = "astrocommunity.colorscheme.kanagawa", enabled = true },
-  { import = "astrocommunity.colorscheme.rose-pine" },
-  { import = "astrocommunity.colorscheme.catppuccin" },
+  { import = "astrocommunity.colorscheme.rose-pine", enabled = true },
+  { import = "astrocommunity.colorscheme.catppuccin", enabled = true },
+  { import = "astrocommunity.completion.copilot-lua" },
+  { import = "astrocommunity.completion.copilot-lua-cmp" },
   {
     -- further customize the options set by the community
-    "catppuccin",
+    "copilot.lua",
     opts = {
-      integrations = {
-        sandwich = false,
-        noice = true,
-        mini = true,
-        leap = true,
-        markdown = true,
-        neotest = true,
-        cmp = true,
-        overseer = true,
-        lsp_trouble = true,
-        ts_rainbow2 = true,
+      suggestion = {
+        keymap = {
+          accept = "<C-l>",
+          accept_word = false,
+          accept_line = false,
+          next = "<C-.>",
+          prev = "<C-,>",
+          dismiss = "<C/>",
+        },
       },
     },
   },
-  { import = "astrocommunity.completion.copilot-lua" },
-  -- {
-  --   -- further customize the options set by the community
-  --   "copilot.lua",
-  --   opts = {
-  --     suggestion = {
-  --       keymap = {
-  --         accept = "<C-l>",
-  --         accept_word = false,
-  --         accept_line = false,
-  --         next = "<C-.>",
-  --         prev = "<C-,>",
-  --         dismiss = "<C/>",
-  --       },
-  --     },
-  --   },
-  -- },
   { import = "astrocommunity.bars-and-lines.smartcolumn-nvim" },
   {
     "m4xshen/smartcolumn.nvim",
