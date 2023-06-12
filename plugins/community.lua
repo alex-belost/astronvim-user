@@ -4,43 +4,49 @@ return {
   -- example of imporing a plugin, comment out to use it or add your own
   -- available plugins can be found at https://github.com/AstroNvim/astrocommunity
 
-  { import = "astrocommunity.pack.typescript" },
+  { import = "astrocommunity.pack.astro" },
+  { import = "astrocommunity.pack.typescript-all-in-one" },
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.json" },
+  { import = "astrocommunity.pack.angular" },
+  { import = "astrocommunity.pack.bash" },
+  { import = "astrocommunity.pack.html-css" },
   { import = "astrocommunity.diagnostics.trouble-nvim" },
-  { import = "astrocommunity.comment.mini-comment" },
   { import = "astrocommunity.indent.indent-blankline-nvim" },
   { import = "astrocommunity.indent.indent-tools-nvim" },
   { import = "astrocommunity.indent.mini-indentscope" },
   { import = "astrocommunity.motion.nvim-surround" },
-  { import = "astrocommunity.project.nvim-spectre" },
+  { import = "astrocommunity.motion.harpoon" },
   { import = "astrocommunity.syntax.hlargs-nvim" },
+  { import = "astrocommunity.lsp.inc-rename-nvim" },
+  { import = "astrocommunity.lsp.lsp-inlayhints-nvim" },
   { import = "astrocommunity.editing-support.todo-comments-nvim" },
-  { import = "astrocommunity.editing-support.mini-splitjoin" },
   { import = "astrocommunity.editing-support.dial-nvim" },
-  { import = "astrocommunity.editing-support.refactoring-nvim" },
-  { import = "astrocommunity.colorscheme.nightfox", enabled = true },
-  { import = "astrocommunity.colorscheme.kanagawa", enabled = true },
-  { import = "astrocommunity.colorscheme.rose-pine", enabled = true },
-  { import = "astrocommunity.colorscheme.catppuccin", enabled = true },
-  { import = "astrocommunity.completion.copilot-lua" },
-  { import = "astrocommunity.completion.copilot-lua-cmp" },
+  { import = "astrocommunity.editing-support.text-case-nvim" },
+  { import = "astrocommunity.editing-support.treej" },
   {
-    -- further customize the options set by the community
-    "copilot.lua",
+    "treesj",
+    keys = { { "gS", "<CMD>TSJToggle<CR>", desc = "Toggle Treesitter Join" } },
+  },
+  { import = "astrocommunity.file-explorer.oil-nvim" },
+  {
+    "oil.nvim",
+    keys = {
+      { "<leader>O", function() require("oil").open_float() end, desc = "Open folder in Oil" },
+    },
     opts = {
-      suggestion = {
-        keymap = {
-          accept = "<C-l>",
-          accept_word = false,
-          accept_line = false,
-          next = "<C-.>",
-          prev = "<C-,>",
-          dismiss = "<C/>",
+      float = {
+        padding = 10,
+        max_width = 80,
+        max_height = 60,
+        border = "rounded",
+        win_options = {
+          winblend = 0,
         },
       },
     },
   },
+  { import = "astrocommunity.completion.copilot-lua" },
   { import = "astrocommunity.bars-and-lines.smartcolumn-nvim" },
   {
     "m4xshen/smartcolumn.nvim",

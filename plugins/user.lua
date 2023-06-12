@@ -13,28 +13,17 @@ return {
     config = function() require("logger").setup() end,
     requires = "nvim-treesitter/nvim-treesitter",
   },
-  -- {
-  --   dir = "~/Projects/personal-projects/scss-completion",
-  --   lazy = false,
-  --   -- event = "User AstroFile",
-  -- },
-  -- {
-  --   "mg979/vim-visual-multi"
-  -- },
   {
     "tpope/vim-fugitive",
     event = "User AstroGitFile",
     cmd = { "Git" },
   },
   {
-    "ThePrimeagen/harpoon",
+    "nvim-treesitter/nvim-treesitter-textobjects",
+    event = "User AstroFile",
+    after = "nvim-treesitter",
+    requires = "nvim-treesitter/nvim-treesitter",
   },
-  -- {
-  --   "nvim-treesitter/nvim-treesitter-textobjects",
-  --   event = "User AstroFile",
-  --   after = "nvim-treesitter",
-  --   requires = "nvim-treesitter/nvim-treesitter",
-  -- },
   {
     "nvim-treesitter/playground",
     event = "User AstroFile",
@@ -58,5 +47,24 @@ return {
       number_only = false,         -- Peek only when the command is only a number instead of when it starts with a number
       centered_peeking = true,     -- Peeked line will be centered relative to window
     },
+  },
+  {
+    "ray-x/web-tools.nvim",
+    event = "User AstroFile",
+    config = function()
+      require("web-tools").setup {
+        keymaps = {
+          repeat_rename = "",  -- . to repeat
+        },
+        hurl = {
+          show_headers = false, -- do not show http headers
+          floating = false,     -- use floating windows (need guihua.lua)
+          formatters = {
+            json = { "jq" },
+            html = { "prettier", "--parser", "html" },
+          },
+        },
+      }
+    end,
   },
 }
