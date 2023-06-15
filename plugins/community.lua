@@ -11,6 +11,7 @@ return {
   { import = "astrocommunity.pack.angular" },
   { import = "astrocommunity.pack.bash" },
   { import = "astrocommunity.pack.html-css" },
+  { import = "astrocommunity.project.nvim-spectre" },
   { import = "astrocommunity.diagnostics.trouble-nvim" },
   { import = "astrocommunity.indent.indent-blankline-nvim" },
   { import = "astrocommunity.indent.indent-tools-nvim" },
