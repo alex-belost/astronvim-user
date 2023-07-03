@@ -24,7 +24,7 @@ return {
   { import = "astrocommunity.editing-support.todo-comments-nvim" },
   { import = "astrocommunity.editing-support.dial-nvim" },
   { import = "astrocommunity.editing-support.text-case-nvim" },
-  { import = "astrocommunity.editing-support.treej" },
+  { import = "astrocommunity.editing-support.treesj" },
   {
     "treesj",
     keys = { { "gS", "<CMD>TSJToggle<CR>", desc = "Toggle Treesitter Join" } },
