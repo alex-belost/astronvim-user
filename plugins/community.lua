@@ -5,6 +5,25 @@ return {
   -- available plugins can be found at https://github.com/AstroNvim/astrocommunity
 
   { import = "astrocommunity.pack.astro" },
+  { import = "astrocommunity.colorscheme.catppuccin" },
+  { -- further customize the options set by the community
+    "catppuccin",
+    priority = 1000,
+    opts = {
+      integrations = {
+        -- sandwich = false,
+        noice = true,
+        mini = true,
+        leap = true,
+        markdown = true,
+        neotest = true,
+        cmp = true,
+        overseer = true,
+        lsp_trouble = true,
+        ts_rainbow2 = true,
+      },
+    },
+  },
   { import = "astrocommunity.pack.typescript-all-in-one" },
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.json" },
