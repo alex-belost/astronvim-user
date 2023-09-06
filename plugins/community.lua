@@ -11,7 +11,6 @@ return {
     priority = 1000,
     opts = {
       integrations = {
-        -- sandwich = false,
         noice = true,
         mini = true,
         leap = true,
@@ -66,7 +65,7 @@ return {
       },
     },
   },
-  { import = "astrocommunity.completion.copilot-lua" },
+  -- { import = "astrocommunity.completion.copilot-lua" },
   { import = "astrocommunity.bars-and-lines.smartcolumn-nvim" },
   {
     "m4xshen/smartcolumn.nvim",

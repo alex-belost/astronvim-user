@@ -1,0 +1,79 @@
+{
+  "Media min query screen only 360px": {
+    "prefix": [
+      "res:360"
+    ],
+    "body": [
+      "@media only screen and (min-width: 360px) {",
+      "$0",
+      "}"
+    ],
+    "description": "Media query"
+  },
+  "Media min query screen only 414px": {
+    "prefix": [
+      "res:414"
+    ],
+    "body": [
+      "@media only screen and (min-width: 414px) {",
+      "$0",
+      "}"
+    ],
+    "description": "Media query"
+  },
+  "Media min query screen only 768px": {
+    "prefix": [
+      "res:768"
+    ],
+    "body": [
+      "@media only screen and (min-width: 768px) {",
+      "$0",
+      "}"
+    ],
+    "description": "Media query"
+  },
+  "Media min query screen only 1024px": {
+    "prefix": [
+      "res:1024"
+    ],
+    "body": [
+      "@media only screen and (min-width: 1024px) {",
+      "$0",
+      "}"
+    ],
+    "description": "Media query"
+  },
+  "Media min query screen only 1280px": {
+    "prefix": [
+      "res:1280"
+    ],
+    "body": [
+      "@media only screen and (min-width: 1280px) {",
+      "$0",
+      "}"
+    ],
+    "description": "Media query"
+  },
+  "Media min query screen only 1440px": {
+    "prefix": [
+      "res:1440"
+    ],
+    "body": [
+      "@media only screen and (min-width: 1440px) {",
+      "$0",
+      "}"
+    ],
+    "description": "Media query"
+  },
+  "Media min query screen only 1920px": {
+    "prefix": [
+      "res:1920"
+    ],
+    "body": [
+      "@media only screen and (min-width: 1920px) {",
+      "$0",
+      "}"
+    ],
+    "description": "Media query"
+  }
+}

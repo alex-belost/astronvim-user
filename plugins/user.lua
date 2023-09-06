@@ -21,8 +21,9 @@ return {
   {
     "nvim-treesitter/nvim-treesitter-textobjects",
     event = "User AstroFile",
-    after = "nvim-treesitter",
-    requires = "nvim-treesitter/nvim-treesitter",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+    },
   },
   {
     "nvim-treesitter/playground",
@@ -89,6 +90,42 @@ return {
 
       -- return the final configuration table
       return opts
+    end,
+  },
+  {
+    "xiyaowong/transparent.nvim",
+    opts = {
+      groups = { -- table: default groups
+        "Normal",
+        "NormalNC",
+        "Comment",
+        "Constant",
+        "Special",
+        "Identifier",
+        "Statement",
+        "PreProc",
+        "Type",
+        "Underlined",
+        "Todo",
+        "String",
+        "Function",
+        "Conditional",
+        "Repeat",
+        "Operator",
+        "Structure",
+        "LineNr",
+        "NonText",
+        "SignColumn",
+        "CursorLineNr",
+        "EndOfBuffer",
+      },
+      extra_groups = {}, -- table: additional groups that should be cleared
+      exclude_groups = {}, -- table: groups you don't want to clear
+    },
+    cmd = { "TransparentEnable", "TransparentDisable", "TransparentToggle" },
+    init = function()
+      vim.g.transparent_enabled = true
+      vim.cmd "TransparentEnable"
     end,
   },
 }

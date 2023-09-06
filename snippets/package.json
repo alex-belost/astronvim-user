@@ -9,6 +9,14 @@
       {
         "language": "scss",
         "path": "./projects/mpp-fe/scss.json"
+      },
+      {
+        "language": "php",
+        "path": "./projects/paymentop/php.json"
+      },
+      {
+        "language": "css",
+        "path": "./projects/paymentop/css.json"
       }
     ]
   }

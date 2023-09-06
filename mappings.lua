@@ -1,7 +1,7 @@
 return {
   n = {
     ["<leader>n"] = false,
-    ["<leader>bo"] = { "<cmd>Neotree focus filesystem left reveal<cr>", desc = "Open current file"},
+    ["<leader>bo"] = { "<cmd>Neotree focus filesystem left reveal<cr>", desc = "Open current file" },
     ["<leader>bD"] = {
       function()
         require("astronvim.utils.status").heirline.buffer_picker(

@@ -1,0 +1,40 @@
+{
+  "Php expression": {
+    "prefix": "php",
+    "body": [
+      "<?php $0 ?>"
+    ],
+    "description": "PHP expression"
+  },
+  "Dump": {
+    "prefix": "dump",
+    "body": [
+      "<pre style='color: red;outline: 2px solid red;padding: 10px;'><?php echo var_dump($0) ?></pre>"
+    ],
+    "description": "Dump PHP data"
+  },
+  "If statement": {
+    "prefix": "if",
+    "body": [
+      "<?php if () : ?>",
+      "<?php endif; ?>"
+    ],
+    "description": "PHP expression"
+  },
+  "If rows statement": {
+    "prefix": "if:rows",
+    "body": [
+      "<?php if (have_rows($0)) : ?>",
+      "<?php endif; ?>"
+    ],
+    "description": "PHP expression"
+  },
+  "While rows statement": {
+    "prefix": "while:rows",
+    "body": [
+      "<?php while (have_rows($0)) : the_row(); ?>",
+      "<?php endwhile; ?>"
+    ],
+    "description": "PHP expression"
+  }
+}

@@ -11,7 +11,6 @@ return {
         "angularls",
         "lua_ls",
         "cssls",
-        "eslint",
       },
     },
   },
@@ -20,7 +19,7 @@ return {
     "jay-babu/mason-null-ls.nvim",
     -- overrides `require("mason-null-ls").setup(...)`
     opts = {
-      ensure_installed = { "prettierd", "stylua" },
+      ensure_installed = { "prettierd", "stylua", "eslint_d" },
       -- handlers = {
       --   -- for prettier
       --   prettier = function()
@@ -45,15 +44,15 @@ return {
       --     })
       --   end,
       --   -- For eslint_d:
-      --   eslint_d = function()
-      --     require("null-ls").register(require("null-ls").builtins.diagnostics.eslint_d.with {
-      --       condition = function(utils)
-      --         return utils.root_has_file "package.json"
-      --           or utils.root_has_file ".eslintrc.json"
-      --           or utils.root_has_file ".eslintrc.js"
-      --       end,
-      --     })
-      --   end,
+      -- eslint_d = function()
+      --   require("null-ls").register(require("null-ls").builtins.diagnostics.eslint_d.with {
+      --     condition = function(utils)
+      --       return utils.root_has_file "package.json"
+      --         or utils.root_has_file ".eslintrc.json"
+      --         or utils.root_has_file ".eslintrc.js"
+      --     end,
+      --   })
+      -- end,
       -- },
     },
   },
