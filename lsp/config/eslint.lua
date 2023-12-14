@@ -14,20 +14,17 @@ return {
       enable = true,
       mode = "all",
     },
-    experimental = {
-      useFlatConfig = false,
-    },
     format = true,
     nodePath = "",
     onIgnoredFiles = "off",
     packageManager = "npm",
     problems = {
-      shortenToSingleLine = false,
+      shortenToSingleLine = true,
     },
     quiet = false,
     rulesCustomizations = {},
     run = "onType",
-    useESLintClass = false,
+    useESLintClass = true,
     validate = "on",
     workingDirectory = {
       mode = "location",

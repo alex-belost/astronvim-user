@@ -1,5 +1,4 @@
 return {
-  s("foo", { t "Expands to bar" }),
   s("trigger", {
     t { "After expanding, the cursor is here ->" },
     i(1),

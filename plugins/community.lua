@@ -36,6 +36,7 @@ return {
   { import = "astrocommunity.indent.mini-indentscope" },
   { import = "astrocommunity.motion.nvim-surround" },
   { import = "astrocommunity.motion.harpoon" },
+  -- { import = "astrocommunity.motion.flash-nvim" },
   { import = "astrocommunity.syntax.hlargs-nvim" },
   { import = "astrocommunity.lsp.inc-rename-nvim" },
   { import = "astrocommunity.lsp.lsp-inlayhints-nvim" },

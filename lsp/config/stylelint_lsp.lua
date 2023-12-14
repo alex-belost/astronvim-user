@@ -1,8 +1,8 @@
 return {
-  filetypes = { "scss", "css" },
+  filetypes = { "scss", "css", "html", "php" },
   settings = {
     stylelintplus = {
-      trace = { server = "messages" },
+      enable = true,
       validateOnType = true,
       autoFixOnFormat = true,
     },

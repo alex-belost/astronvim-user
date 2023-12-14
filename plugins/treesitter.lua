@@ -1,7 +1,7 @@
 return {
   "nvim-treesitter/nvim-treesitter",
   opts = {
-    ensure_installed = { "lua", "html", "css", "scss", "vue" },
+    ensure_installed = { "lua", "html", "css", "scss", "vue", "javascript", "typescript", "bash", "zig" },
     playground = {
       enable = true,
       disable = {},
