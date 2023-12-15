@@ -3,6 +3,7 @@ return {
   {
     "goolord/alpha-nvim",
     opts = function(_, opts)
+      local dashboard = require "alpha.themes.dashboard"
       -- customize the dashboard header
       opts.section.header.val = {
         " █████  ███████ ████████ ██████   ██████",
@@ -16,6 +17,16 @@ return {
         "    ██ ██  ██ ██    ██ ██ ██ ████ ██",
         "    ██  ██ ██  ██  ██  ██ ██  ██  ██",
         "    ██   ████   ████   ██ ██      ██",
+      }
+
+      opts.section.buttons.val = {
+        dashboard.button("p", "  Projects  ", "<cmd>Telescope projects<cr>"),
+        dashboard.button("l", "  Last Session  ", "<cmd>SessionManager! load_last_session<cr>"),
+        dashboard.button("s", "󱂬  Load Session  ", "<cmd>SessionManager! load_session<cr>"),
+        dashboard.button("f", "  Find File  ", ":lua require('telescope.builtin').find_files()<cr>"),
+        dashboard.button("o", "  Recents  ", ":lua require('telescope.builtin').oldfiles()<cr>"),
+        dashboard.button("w", "󰾺  Find Word  ", ":lua require('telescope.builtin').live_grep()<cr>"),
+        dashboard.button("m", "  Bookmarks  ", ":lua require('telescope.builtin').marks()<cr>"),
       }
       return opts
     end,

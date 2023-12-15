@@ -1,0 +1,19 @@
+{
+  "name": "nvim-snippets",
+  "author": "alex.belost",
+  "engines": {
+    "vscode": "^1.11.0"
+  },
+  "contributes": {
+    "snippets": [
+      {
+        "language": "php",
+        "path": "./projects/paymentop/php.json"
+      },
+      {
+        "language": "css",
+        "path": "./projects/paymentop/css.json"
+      }
+    ]
+  }
+}
